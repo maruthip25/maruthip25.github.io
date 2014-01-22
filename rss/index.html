@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Maruthi Sharma]]></title><description><![CDATA[The Robotboy Guy...]]></description><link>http://my-ghost-blog.com/</link><generator>Ghost v0.4.0</generator><lastBuildDate>Wed, 22 Jan 2014 04:31:34 GMT</lastBuildDate><atom:link href="http://my-ghost-blog.com/rss/" rel="self" type="application/rss+xml"/><author><![CDATA[Maruthi Sharma]]></author><ttl>60</ttl><item><title><![CDATA[New Project on GitHub]]></title><description><![CDATA[<p>These days, I’m messin around iwth github and stuff :P . So i decided to upload push something onto my github account.</p>
+
+<pre><code>http://maruthip25.github.io/three/
+</code></pre>]]></description><link>http://my-ghost-blog.com/new-project-on-github/</link><guid isPermaLink="false">434a7616-abe5-4d7b-a52c-21b83b11e9b1</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Tue, 21 Jan 2014 10:34:54 GMT</pubDate></item><item><title><![CDATA[How to edit files using notepad++ from WindowsPowerShell]]></title><description><![CDATA[<p>So, why PowerShell??.. for using git-nodejs-npm-ish stuff from it. I know Linux’s terminal is better. But, I can’t ignore windows as of now as I use Photoshop, Illustrator and other things on windows. I have nothing against GIMP :P  or Inkscape… I just got used to these….</p>
+
+<p>Anyway, I wanted to open a file directly in a custom editor like Notepad++ (which is awesome btw), I knew we could use something like</p>
+
+<pre><code>start notepad++ &lt;file-name&gt;
+</code></pre>
+
+<p>But (as you can see), its too long. So, I browsed around.I came across some “Scripts” . But I found an easier method to do what I wanted.</p>
+
+<p>All you have to use is an “Alias” ….</p>
+
+<p>So, Open PowerShell, and simply run</p>
+
+<pre><code>Set-Alias
+</code></pre>
+
+<p>or use its own alias</p>
+
+<pre><code>sal
+</code></pre>
+
+<p>Under "name" give the shortcut you want to use. I used “npp”. <br />
+Now, under path, give the path to Notepad++ Program. You may have to change it according to your directory. Usually its something like</p>
+
+<pre><code>"C:\Program Files (x86)\Notepad++\notepad++.exe"
+</code></pre>
+
+<p>Now, run</p>
+
+<pre><code>npp &lt;file-name&gt;
+</code></pre>
+
+<p>And it opens!. Smooth isn’t it?. But you’ll probably curse me when you realise that it doesn’t work anymore after you close your WindowsPowerShell and open it the next time.</p>
+
+<p>In order to save your Aliases permanently, you must store it in your “profile”. Now before we continue, we need to understand some basics about “Profiles”. I’ll simply grab some stuff directly from “Microsoft TechNet’s post” (<a href='http://technet.microsoft.com/en-us/library/ee692764.aspx' >http://technet.microsoft.com/en-us/library/ee692764.aspx</a>)</p>
+
+<p>What is a Profile?</p>
+
+<p>The Windows PowerShell profile is simply a script file that runs when Windows PowerShell starts up. You can put cmdlets, scripts, functions - any valid Windows PowerShell commands - into this script file. Each time you start Windows PowerShell, this script file will run. That means you can use the profile to set up your Windows PowerShell environment. Typically that would be custom console settings and aliases, but use your imagination and you can come up with other things you’d like to customize in PowerShell before you start working with it.</p>
+
+<p>Finding the profile:</p>
+
+<p>Type this at your PowerShell command prompt:</p>
+
+<pre><code>$profile
+</code></pre>
+
+<p>That built-in variable will return something like this for Windows XP:</p>
+
+<pre><code>C:\Documents and Settings\keymyer\my documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+</code></pre>
+
+<p>And this for Windows Vista and Windows Server 2008:</p>
+
+<pre><code>C:\Users\kenmyer\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+</code></pre>
+
+<p>This is the full path to the file that Windows PowerShell will try to run when it starts. Notice we said “try” to run. Here’s an interesting fact: just because you were able to find the profile doesn’t mean it actually exists. $profile is simply a built-in variable that contains the full path to where the profile will be if there is one; the file doesn’t actually have to exist, and, by default. it doesn’t. If you want a profile to run when you start Windows PowerShell, you need to create this file.</p>
+
+<p>Creating a profile:</p>
+
+<p>Before we decide to create a profile, let’s check to see whether we already have one:</p>
+
+<pre><code>Test-Path $profile
+</code></pre>
+
+<p>If the profile exists this command will return True; if it doesn’t exist, the command will return False. If this command returns False, you need to create the profile.</p>
+
+<p>Creating a profile in Windows XP is really easy. Simply type this at the command prompt:</p>
+
+<pre><code>notepad $profile
+</code></pre>
+
+<p>This command opens the profile in Notepad. If the profile doesn’t exist, you’ll be prompted to create it. If you choose Yes, the file will be created for you and will be opened in Notepad. Remember, though, we said this is for Windows XP. If you’re running Windows Vista or Windows Server 2008 things get a little more complicated. (But just a little bit, not very much.) If the full path to this file doesn’t exist, trying to open it in Notepad will return an error; you won’t receive any prompts and the file won’t be created for you. The way to create this file in Windows Vista and Windows Server 2008 (an approach which will also work in Windows XP) is to use the New-Item cmdlet:</p>
+
+<pre><code>New-Item -path $profile -type file -force
+</code></pre>
+
+<p>We pass three parameters to New-Item:</p>
+
+<pre><code>-path $profile We’re passing the full path, stored in the $profile variable, of the item we want to create.
+
+-type file This tells New-Item what type of item we’re creating, in this case a file.
+
+-force This parameter tells New-Item to create the full path and file no matter what.
+</code></pre>
+
+<p>Now you can open the profile.</p>
+
+<pre><code>notepad $profile
+</code></pre>
+
+<p>Now, Back to our post</p>
+
+<p>After you’re done with opening your profile, place the following line in it and save.</p>
+
+<pre><code>Set-Alias npp “C:\Program Files (x86)\Notepad++\notepad++.exe”
+</code></pre>
+
+<p>And like I’ve said before, You may have to change the second argument (the path to .exe file) according to your installation directory.</p>
+
+<p>Done. Now your alias is permanent.</p>
+
+<p>And of course, If you are a fan of Vim or Sublime-Text or Brackets or any other text-editor, you can always add an alias for them. Just make sure the alias isn’t assigned to something. You can run the following command to list out all the existing aliases.</p>
+
+<pre><code>get-alias
+</code></pre>
+
+<p>That’s pretty much it.</p>]]></description><link>http://my-ghost-blog.com/how-to-edit-files-using-notepad-from-windowspowershell/</link><guid isPermaLink="false">d2676abb-5bf8-4923-861b-4b603ddda601</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Tue, 21 Jan 2014 10:30:07 GMT</pubDate></item><item><title><![CDATA[Finally.. Hopefully]]></title><description><![CDATA[<h3 id="runningghost">Running GHOST</h3>
+
+<p>But I'm still waiting for the python-based Static site generator called <a href='https://github.com/axitkhurana/buster' >Buster</a> to solve a small <a href='https://github.com/axitkhurana/buster/issues/15' >Issue</a>. </p>
+
+<p>Once its done, I can post frequently from my Windows :P</p>]]></description><link>http://my-ghost-blog.com/finally-hopefully/</link><guid isPermaLink="false">5b5f7be7-2493-4d44-8ddc-7723899c54f9</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Tue, 21 Jan 2014 10:28:43 GMT</pubDate></item></channel></rss>

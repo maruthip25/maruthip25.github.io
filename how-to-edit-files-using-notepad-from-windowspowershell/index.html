@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+    <title>How to edit files using notepad++ from WindowsPowerShell</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="only screen and (max-width: 1000px)" href="../assets/css/main-mobile.css" />
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 1001px)" href="../assets/css/main-desktop.css" />
+
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif&subset=latin,latin-ext,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&amp;family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
+
+    
+    <meta name="generator" content="Ghost 0.4" />
+<link rel="alternate" type="application/rss+xml" title="Maruthi Sharma" href="../rss/index.html">
+<link rel="canonical" href="http://my-ghost-blog.com/how-to-edit-files-using-notepad-from-windowspowershell/" />
+</head>
+<body class="post-template">
+
+    
+    
+
+
+
+
+
+<main class="content contentpost" role="main">
+
+    
+    <header class="post-header contentpost__logo ">
+        <a id="blog-logo" href="../index.html">
+            
+                Maruthi Sharma
+            
+        </a>
+    </header>
+
+    <article class="contentpost__inner post">
+
+        
+        
+
+        
+
+        <div class="contentpost__sidebar">
+            <section class="contentpost__author cf">
+                <div class="contentpost__userimage" style="background-image: url(http://www.gravatar.com/avatar/1b468703fa3d10de86b18b7854d5a861?d=404)"></div>
+                <h4>Maruthi Sharma</h4>
+                <p>Student/ Web Designer/ Front End Developer/ UI Designer..... Music Addict/ An Idiot</p>
+            </section>
+            <div class="cf">
+                <hr>
+            </div>
+            <section class="contentpost__sidebar__meta cf">
+                <h5>Published:</h5><time datetime="2014-01-21">21 Jan 2014</time>
+            </section>
+        </div>
+
+        <span class="contentpost__meta"> </span>
+
+        <h1 class="contentpost__headline post-title">How to edit files using notepad++ from WindowsPowerShell</h1>
+
+        <section class="contentpost__articlecontent post-content">
+            <p>So, why PowerShell??.. for using git-nodejs-npm-ish stuff from it. I know Linux’s terminal is better. But, I can’t ignore windows as of now as I use Photoshop, Illustrator and other things on windows. I have nothing against GIMP :P  or Inkscape… I just got used to these….</p>
+
+<p>Anyway, I wanted to open a file directly in a custom editor like Notepad++ (which is awesome btw), I knew we could use something like</p>
+
+<pre><code>start notepad++ &lt;file-name&gt;
+</code></pre>
+
+<p>But (as you can see), its too long. So, I browsed around.I came across some “Scripts” . But I found an easier method to do what I wanted.</p>
+
+<p>All you have to use is an “Alias” ….</p>
+
+<p>So, Open PowerShell, and simply run</p>
+
+<pre><code>Set-Alias
+</code></pre>
+
+<p>or use its own alias</p>
+
+<pre><code>sal
+</code></pre>
+
+<p>Under "name" give the shortcut you want to use. I used “npp”. <br />
+Now, under path, give the path to Notepad++ Program. You may have to change it according to your directory. Usually its something like</p>
+
+<pre><code>"C:\Program Files (x86)\Notepad++\notepad++.exe"
+</code></pre>
+
+<p>Now, run</p>
+
+<pre><code>npp &lt;file-name&gt;
+</code></pre>
+
+<p>And it opens!. Smooth isn’t it?. But you’ll probably curse me when you realise that it doesn’t work anymore after you close your WindowsPowerShell and open it the next time.</p>
+
+<p>In order to save your Aliases permanently, you must store it in your “profile”. Now before we continue, we need to understand some basics about “Profiles”. I’ll simply grab some stuff directly from “Microsoft TechNet’s post” (<a href='http://technet.microsoft.com/en-us/library/ee692764.aspx'>http://technet.microsoft.com/en-us/library/ee692764.aspx</a>)</p>
+
+<p>What is a Profile?</p>
+
+<p>The Windows PowerShell profile is simply a script file that runs when Windows PowerShell starts up. You can put cmdlets, scripts, functions - any valid Windows PowerShell commands - into this script file. Each time you start Windows PowerShell, this script file will run. That means you can use the profile to set up your Windows PowerShell environment. Typically that would be custom console settings and aliases, but use your imagination and you can come up with other things you’d like to customize in PowerShell before you start working with it.</p>
+
+<p>Finding the profile:</p>
+
+<p>Type this at your PowerShell command prompt:</p>
+
+<pre><code>$profile
+</code></pre>
+
+<p>That built-in variable will return something like this for Windows XP:</p>
+
+<pre><code>C:\Documents and Settings\keymyer\my documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+</code></pre>
+
+<p>And this for Windows Vista and Windows Server 2008:</p>
+
+<pre><code>C:\Users\kenmyer\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+</code></pre>
+
+<p>This is the full path to the file that Windows PowerShell will try to run when it starts. Notice we said “try” to run. Here’s an interesting fact: just because you were able to find the profile doesn’t mean it actually exists. $profile is simply a built-in variable that contains the full path to where the profile will be if there is one; the file doesn’t actually have to exist, and, by default. it doesn’t. If you want a profile to run when you start Windows PowerShell, you need to create this file.</p>
+
+<p>Creating a profile:</p>
+
+<p>Before we decide to create a profile, let’s check to see whether we already have one:</p>
+
+<pre><code>Test-Path $profile
+</code></pre>
+
+<p>If the profile exists this command will return True; if it doesn’t exist, the command will return False. If this command returns False, you need to create the profile.</p>
+
+<p>Creating a profile in Windows XP is really easy. Simply type this at the command prompt:</p>
+
+<pre><code>notepad $profile
+</code></pre>
+
+<p>This command opens the profile in Notepad. If the profile doesn’t exist, you’ll be prompted to create it. If you choose Yes, the file will be created for you and will be opened in Notepad. Remember, though, we said this is for Windows XP. If you’re running Windows Vista or Windows Server 2008 things get a little more complicated. (But just a little bit, not very much.) If the full path to this file doesn’t exist, trying to open it in Notepad will return an error; you won’t receive any prompts and the file won’t be created for you. The way to create this file in Windows Vista and Windows Server 2008 (an approach which will also work in Windows XP) is to use the New-Item cmdlet:</p>
+
+<pre><code>New-Item -path $profile -type file -force
+</code></pre>
+
+<p>We pass three parameters to New-Item:</p>
+
+<pre><code>-path $profile We’re passing the full path, stored in the $profile variable, of the item we want to create.
+
+-type file This tells New-Item what type of item we’re creating, in this case a file.
+
+-force This parameter tells New-Item to create the full path and file no matter what.
+</code></pre>
+
+<p>Now you can open the profile.</p>
+
+<pre><code>notepad $profile
+</code></pre>
+
+<p>Now, Back to our post</p>
+
+<p>After you’re done with opening your profile, place the following line in it and save.</p>
+
+<pre><code>Set-Alias npp “C:\Program Files (x86)\Notepad++\notepad++.exe”
+</code></pre>
+
+<p>And like I’ve said before, You may have to change the second argument (the path to .exe file) according to your installation directory.</p>
+
+<p>Done. Now your alias is permanent.</p>
+
+<p>And of course, If you are a fan of Vim or Sublime-Text or Brackets or any other text-editor, you can always add an alias for them. Just make sure the alias isn’t assigned to something. You can run the following command to list out all the existing aliases.</p>
+
+<pre><code>get-alias
+</code></pre>
+
+<p>That’s pretty much it.</p>
+        </section>
+
+        <footer class="contentpost__footer post-footer">
+
+            <section class="share">
+                <a class="icon-twitter" href="http://twitter.com/share?text=How to edit files using notepad++ from WindowsPowerShell&url=http://my-ghost-blog.com/how-to-edit-files-using-notepad-from-windowspowershell/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://my-ghost-blog.com/how-to-edit-files-using-notepad-from-windowspowershell/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://my-ghost-blog.com/how-to-edit-files-using-notepad-from-windowspowershell/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            <div class="contentpost__footerbar">
+                <div class="contentpost__userimage" style="background-image: url(http://www.gravatar.com/avatar/1b468703fa3d10de86b18b7854d5a861?d=404)"></div>
+                <section class="contentpost__author cf">
+                    <h4>Maruthi Sharma</h4>
+                    <p>Student/ Web Designer/ Front End Developer/ UI Designer..... Music Addict/ An Idiot</p>
+                </section>
+                <section class="contentpost__sidebar__meta cf">
+                    <h5>Published:</h5><time datetime="2014-01-21">21 Jan 2014</time>
+                </section>
+            </div>
+
+        </footer>
+
+        
+
+    </article>
+
+</main>
+
+    
+    <script src="../shared/vendor/jquery/jquery.js?v=69537c5c3d"></script>
+
+    
+    <script type="text/javascript" src="../assets/js/index.js"></script>
+
+</body>
+</html>

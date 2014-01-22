@@ -9,7 +9,7 @@
 .icons-facebook:before{content:"\e004"}
 .hidden{text-indent:-9999px;visibility:hidden;display:none}
 body{background-color:#fff;position:absolute;top:0;left:0;right:0;bottom:0;height:100%;margin:0;padding:0;font-size:16px;font-family:Andada,Georgia,serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;moz-font-feature-settings:"liga=1, dlig=1";-ms-font-feature-settings:"liga","dlig";-webkit-font-feature-settings:"liga","dlig";-o-font-feature-settings:"liga","dlig";font-feature-settings:"liga","dlig"}
-.sidebar{position:absolute;left:0;top:0;bottom:0;width:30%;max-width:500px;background:#303538 no-repeat center center;background-size:cover;font-family:'Lato',sans-serif}.sidebar .sidebar__logo{position:absolute;top:10px;left:10px;width:44px;height:44px;z-index:99;background-color:#111}.sidebar .sidebar__logo .sidebar__logo__image{width:22px;margin:11px}
+.sidebar{position:absolute;left:0;top:0;bottom:0;width:30%;max-width:500px;background:#303538 no-repeat center center;background-size:cover;font-family:'Lato',sans-serif}.sidebar .sidebar__logo{position:absolute;top:10px;left:10px;width:44px;height:44px;z-index:99;}.sidebar .sidebar__logo .sidebar__logo__image{background:#fff;width:100%;margin:0px;padding:5px;}
 .sidebar .sidebar__information{position:absolute;bottom:0;padding:50px 10% 10%}.sidebar .sidebar__information .sidebar__information__title{font-size:32px;margin:0;padding:0;line-height:48px;color:#fff}
 .sidebar .sidebar__information .sidebar__information__description{font-size:16px;margin:0;padding:8px 0;line-height:24px;color:#ccc;font-weight:normal}
 .sidebar .sidebar__information .sidebar__information__footer{padding:8px 0}.sidebar .sidebar__information .sidebar__information__footer a{text-decoration:none;color:#f8ca00}.sidebar .sidebar__information .sidebar__information__footer a:hover{color:#f5e395}
@@ -35,7 +35,7 @@ body{background-color:#fff;position:absolute;top:0;left:0;right:0;bottom:0;heigh
 .tooltip:after{content:"";border-width:5px 5px 0 5px;border-style:solid;border-color:#50585d transparent;display:block;position:absolute;bottom:-4px;left:50%;margin-left:-5px;z-index:220;width:0}
 .subscribe:hover .tooltip{opacity:1;top:-33px}
 .contentpost{padding:120px 0}.contentpost .contentpost__logo{position:absolute;top:10px;left:10px;width:44px;height:44px;z-index:99;font-size:16px;color:#111;font-family:'Lato',sans-serif;font-weight:800}.contentpost .contentpost__logo a:visited,.contentpost .contentpost__logo a:focus,.contentpost .contentpost__logo a:active{color:#111}
-.contentpost .contentpost__logo__img_black_background{background-color:#111}.contentpost .contentpost__logo__img_black_background img{width:22px;margin:11px}
+.contentpost .contentpost__logo__img_black_background{background-color:none}.contentpost .contentpost__logo__img_black_background img{width:48px;margin:0px}
 .contentpost .contentpost__inner{max-width:700px;width:50%;min-width:400px;margin:0 auto;position:relative}
 .contentpost .contentpost__sidebar{position:absolute;width:160px;left:-230px}.contentpost .contentpost__sidebar hr{width:48px;height:1px;background-color:#ccc;margin:16px 0 8px;float:right;border:0}
 .contentpost .contentpost__sidebar .contentpost__author{position:relative;padding:0 0 16px}.contentpost .contentpost__sidebar .contentpost__author .contentpost__userimage{width:80px;height:80px;position:absolute;right:0;top:0;border-radius:80px;overflow:hidden;background-repeat:no-repeat;background-size:cover;background-position:center}

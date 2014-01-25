@@ -1,8 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Maruthi Sharma]]></title><description><![CDATA[The Robotboy Guy...]]></description><link>http://maruthisharma.com/</link><generator>Ghost v0.4.0</generator><lastBuildDate>Wed, 22 Jan 2014 08:28:43 GMT</lastBuildDate><atom:link href="http://maruthisharma.com/rss/" rel="self" type="application/rss+xml"/><author><![CDATA[Maruthi Sharma]]></author><ttl>60</ttl><item><title><![CDATA[Its on !]]></title><description><![CDATA[<h3 id="siteslive">Site's live</h3>]]></description><link>http://maruthisharma.com/its-on/</link><guid isPermaLink="false">14a578d2-9db2-4f6c-96e5-1746a3ba33e8</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Wed, 22 Jan 2014 05:18:02 GMT</pubDate></item><item><title><![CDATA[New Project on GitHub]]></title><description><![CDATA[<p>These days, I’m messin around with github and stuff :P . So i decided to upload push something onto my github account.</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Maruthi Sharma]]></title><description><![CDATA[The Robotboy Guy...]]></description><link>http://maruthisharma.com/</link><generator>Ghost v0.4.0</generator><lastBuildDate>Sat, 25 Jan 2014 05:19:18 GMT</lastBuildDate><atom:link href="http://maruthisharma.com/rss/" rel="self" type="application/rss+xml"/><author><![CDATA[Maruthi Sharma]]></author><ttl>60</ttl><item><title><![CDATA[Ruby - &quot;Jekyll&quot; Blogging Platform Installation Tips for Windows]]></title><description><![CDATA[<p>About a week ago, I decided to try out the ruby-based blogging platform (also actually a static site generator) named <a href='http://jekyllrb.com/' >"Jekyll"</a> . </p>
 
-<pre><code>http://maruthip25.github.io/three/
-</code></pre>]]></description><link>http://maruthisharma.com/new-project-on-github/</link><guid isPermaLink="false">434a7616-abe5-4d7b-a52c-21b83b11e9b1</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Tue, 21 Jan 2014 10:34:54 GMT</pubDate></item><item><title><![CDATA[How to edit files using notepad++ from WindowsPowerShell]]></title><description><![CDATA[<p>So, why PowerShell??.. for using git-nodejs-npm-ish stuff from it. I know Linux’s terminal is better. But, I can’t ignore windows as of now as I use Photoshop, Illustrator and other things on windows. I have nothing against GIMP :P  or Inkscape… I just got used to these….</p>
+<p>I realised there are a few issues with it if you try to use it on Windows.</p>
+
+<p>Lets just skip the "address-each-issue" part. I'll simply point out 4 important steps to get it Up-and-Running smoothly :P</p>
+
+<ol>
+<li><p><strong>Install Ruby 1.9.3 instead of Ruby 2.1.0</strong> <br />
+If you are like me. You might always have the temptation of downloading the "latest" version of everything. Well, in this case, you might have to calm down a bit.</p>
+
+<p>Although 1.9.3 is like the older version, it is supported till February 23, 2015 and 2.1.0 seems to have a couple of issues, especially with windows. Not only jekyll, even the mighty famous we framework <strong>rails</strong> might give you trouble if you try to run it on Ruby 2.1.0 (on windows, for sure).</p></li>
+<li><p><strong>Install Jekyll 1.4.2 instead of Jekyll 1.4.3</strong> <br />
+The reasons are similar. Just stick with 1.4.2 till things get cleared.</p></li>
+<li><p><strong>Pygments - the syntax highlighter</strong> <br />
+This actually works well with jekyll. But, you'll need Python to run it (obviously to even install it). So, incase you decide not to have it included, there is one extra thing you have to do. Go to the <code>_config.yml</code> file in your jekyll root and set the <code>pygments</code>  variable to <code>false</code>.</p></li>
+<li><p><strong>Install wdm ( Windows Directory Monitor )</strong> <br />
+I don't know if everyone will have this problem. But, for some strange reason, in my case, the gem installer didn't automatically install a dependency name wdm. Just to make sure, run </p>
+
+<pre><code>    gem list
+</code></pre>
+
+<p>and if you don't see something like </p>
+
+<pre><code>    wdm (0.1.0)
+</code></pre>
+
+<p>(almost at the end, because the list is usually sorted alphabetically) , then you have to install it. Simply run</p>
+
+<pre><code>    gem install wdm
+</code></pre></li>
+</ol>
+
+<p>Done. That's pretty much it.</p>]]></description><link>http://maruthisharma.com/ruby-jekyll-blogging-platform-installation-tips-for-windows/</link><guid isPermaLink="false">4490b10b-e12b-4d84-9073-58fca8a12659</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Sat, 25 Jan 2014 05:12:22 GMT</pubDate></item><item><title><![CDATA[Its on !]]></title><description><![CDATA[<h3 id="siteslive">Site's live</h3>]]></description><link>http://maruthisharma.com/its-on/</link><guid isPermaLink="false">14a578d2-9db2-4f6c-96e5-1746a3ba33e8</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Wed, 22 Jan 2014 05:18:02 GMT</pubDate></item><item><title><![CDATA[New Project on GitHub]]></title><description><![CDATA[<p>These days, I’m messin around with github and stuff :P . So i decided to upload push something onto my github account.<a href='http://maruthisharma.com/three/' >Click here to see project</a></p>
+
+<h4 id="readmefile">Readme File</h4>
+
+<h2 id="markthreetemplate">Mark Three - Template</h2>
+
+<hr />
+
+<p>A set of files I usually use, everytime I start a project.</p>
+
+<h3 id="currentlyincludes">Currently includes</h3>
+
+<ul>
+<li>Normalize v2.1.3</li>
+<li>Bourbon (SASS dependant) v3.1.8</li>
+<li>jQuery v1.10.2</li>
+</ul>
+
+<h3 id="csssassbased">CSS (SASS based)</h3>
+
+<ul>
+<li>Edit style.scss</li>
+<li>Link style.css</li>
+</ul>
+
+<h4 id="runningsass">Running SASS</h4>
+
+<ul>
+<li>Point to the <code>/css</code> folder and run the following SASS command (just once)</li>
+</ul>
+
+<pre><code>sass --watch style.scss:style.css --style compressed  
+</code></pre>
+
+<ul>
+<li>or in WindowsPowerShell, run</li>
+</ul>
+
+<pre><code>.\sass
+</code></pre>
+
+<p>goto <code>// Declare Variables</code> in style.scss for default variables </p>
+
+<p>Optionally, run <code>myth</code> in the end  </p>
+
+<pre><code>myth style.css style.css  
+</code></pre>
+
+<h3 id="jsuglifybased">JS (Uglify based)</h3>
+
+<ul>
+<li>Edit script.u.js</li>
+<li>Link script.js</li>
+</ul>
+
+<h4 id="runninguglifyjs">Running Uglify.js</h4>
+
+<ul>
+<li>From the project folder, run (after every update)</li>
+</ul>
+
+<pre><code>uglifyjs -o js/script.js js/script.u.js  
+</code></pre>
+
+<ul>
+<li>or in WindowsPowerShell, run</li>
+</ul>
+
+<pre><code>.\ujs
+</code></pre>
+
+<h3 id="defaultfont">Default Font</h3>
+
+<ul>
+<li>Open Sans</li>
+</ul>]]></description><link>http://maruthisharma.com/new-project-on-github/</link><guid isPermaLink="false">434a7616-abe5-4d7b-a52c-21b83b11e9b1</guid><dc:creator><![CDATA[Maruthi Sharma]]></dc:creator><pubDate>Tue, 21 Jan 2014 10:34:54 GMT</pubDate></item><item><title><![CDATA[How to edit files using notepad++ from WindowsPowerShell]]></title><description><![CDATA[<p>So, why PowerShell??.. for using git-nodejs-npm-ish stuff from it. I know Linux’s terminal is better. But, I can’t ignore windows as of now as I use Photoshop, Illustrator and other things on windows. I have nothing against GIMP :P  or Inkscape… I just got used to these….</p>
 
 <p>Anyway, I wanted to open a file directly in a custom editor like Notepad++ (which is awesome btw), I knew we could use something like</p>
 

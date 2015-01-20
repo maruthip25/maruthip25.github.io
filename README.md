@@ -1,1 +1,0 @@
-### My Ghost - Buster Blog

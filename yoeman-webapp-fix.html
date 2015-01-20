@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog | How to fix the missing PNG&#x27;s bug in Yoeman&#x27;s Webapp Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="fonts/sans.css" />
+
+  </head>
+  <body>
+    <div class="top">
+      <div id="logo">
+      <a href="."><img src="images/logo.png" width="100%"></a>
+    </div>
+    </div>
+
+  
+  <div class="wrapper">
+  
+  <div class="content">
+  <h2>How to fix the missing PNG&#x27;s bug in Yoeman&#x27;s Webapp Generator</h2>
+  
+  <p>If you are among the few who do their coding on windows (like me), and you try to use the amazing <a href="http://yeoman.io/">Yoeman</a> as a part of you frontend devp. workflow (like me), then there is a chance you might have come across a small bug (with huge consequences) in it&#39;s WebApp geneator.</p>
+<h3 id="the-bug">The Bug</h3>
+<p>As of version 0.4.9 (of the Webapp Generator), on running <code>grunt build</code> (on windows), your resulting <code>dist</code> folder ends up with exactly 0 PNG&#39;s exported from your <code>src</code> folder :P.</p>
+<p>I don&#39;t know if its the same for GIF&#39;s.</p>
+<h3 id="the-fix">The Fix</h3>
+<p>In your <code>Gruntfile.js</code>, look for the configuration of the <code>imagemin</code> task</p>
+<p>Find something similar to :</p>
+<pre><code>imagemin: {
+        dist: {
+            files: [{
+                expand: true,
+                cwd: &#39;src/images&#39;,
+                src: &#39;{,*/}*.{gif,jpeg,png,jpg}&#39;,
+                dest: &#39;dist/images&#39;
+            }]
+        }
+    }</code></pre>
+<p>Now, apparently this task fails to work for PNG files, so we <strong>remove &#39;png&#39;</strong> from the list under <code>src:</code>.</p>
+<p>But, we still have to copy the png files to <code>dist</code> right? The <code>copy</code> task will do this for us.</p>
+<p>Find something similar to :</p>
+<pre><code>copy: {
+        dist: {
+            files: [{
+                expand: true,
+                dot: true,
+                cwd: &#39;src&#39;,
+                dest: &#39;dist&#39;,
+                src: [
+                    &#39;*.{ico,png,txt}&#39;,
+                    &#39;.htaccess&#39;,
+                    &#39;images/{,*/}*.webp&#39;,
+                    &#39;{,*/}*.html&#39;,
+                    &#39;styles/fonts/{,*/}*.*&#39;
+                ]
+            }]
+        }</code></pre>
+<p>Now, add an entry for PNG&#39;s in the array under <code>src:</code></p>
+<pre><code>&#39;images/{,*/}*.png&#39; //coz imagemin doesnt do pngs</code></pre>
+<p>You&#39;ll end up with something similar to</p>
+<pre><code>copy: {
+        dist: {
+            files: [{
+                expand: true,
+                dot: true,
+                cwd: &#39;src&#39;,
+                dest: &#39;dist&#39;,
+                src: [
+                    &#39;*.{ico,png,txt}&#39;,
+                    &#39;.htaccess&#39;,
+                    &#39;images/{,*/}*.webp&#39;,
+                    &#39;images/{,*/}*.png&#39;, //coz imagemin doesnt do pngs
+                    &#39;{,*/}*.html&#39;,
+                    &#39;styles/fonts/{,*/}*.*&#39;
+                ]
+            }]
+        }</code></pre>
+<p>Now save your <code>Gruntfile.js</code> and try <code>grunt build</code>.</p>
+<p>Done. That&#39;s pretty much it.</p>
+
+  
+  <div class="author">
+
+  </div>
+  <div style="clear:both"></div>
+  <script type="text/javascript">
+  window.onload=function(){
+    $('.author').append($.gravatar('maruthip25@gmail.com',{secure: true,size: 150}));
+    $('.author').append("Posted by Maruthi Sharma <br />on 2014/8/03 12:38 PM");
+  }
+  </script>
+  </div>
+    <div id="disqus_thread"></div>
+   <script type="text/javascript">
+       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+       var disqus_shortname = 'maruthisharmasblog'; // required: replace example with your forum shortname
+
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+ </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.gravatar.js"></script>
+  <script src="js/md5.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog | Updated Mark Three!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="fonts/sans.css" />
+
+  </head>
+  <body>
+    <div class="top">
+      <div id="logo">
+      <a href="."><img src="images/logo.png" width="100%"></a>
+    </div>
+    </div>
+
+  
+  <div class="wrapper">
+  
+  <div class="content">
+  <h2>Updated Mark Three!</h2>
+  
+  <p>I&#39;ve added support to my new-found-love <a href="http://angularjs.org/">&quot;AngularJS&quot;</a>.</p>
+<p><img src="http://angularjs.org/img/AngularJS-large.png" alt="angular-image"></p>
+<p>I wanted to seperate all libraries to a seperate js file so I decided to simply link a minified version (uncompressed is around 1.2MB) containing the following JSLibs</p>
+<ul>
+<li>jQuery</li>
+<li>AngularJS original</li>
+<li>AngularJS&#39;s ngRoute module</li>
+<li>AngularJS&#39;s ngAnimate module</li>
+</ul>
+<p>and I named the file as</p>
+<pre><code>lib.js</code></pre>
+<p>The project can be found at
+<a href="http://maruthisharma.com/three/"><a href="http://maruthisharma.com/three/">http://maruthisharma.com/three/</a></a></p>
+<p>That&#39;s pretty much it.</p>
+
+  
+  <div class="author">
+
+  </div>
+  <div style="clear:both"></div>
+  <script type="text/javascript">
+  window.onload=function(){
+    $('.author').append($.gravatar('maruthip25@gmail.com',{secure: true,size: 150}));
+    $('.author').append("Posted by Maruthi Sharma <br />on 2014/1/28 4:39 PM");
+  }
+  </script>
+  </div>
+    <div id="disqus_thread"></div>
+   <script type="text/javascript">
+       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+       var disqus_shortname = 'maruthisharmasblog'; // required: replace example with your forum shortname
+
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+ </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.gravatar.js"></script>
+  <script src="js/md5.js"></script>
+  </body>
+</html>
+

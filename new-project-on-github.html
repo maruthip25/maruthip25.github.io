@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog | New Project on GitHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="fonts/sans.css" />
+
+  </head>
+  <body>
+    <div class="top">
+      <div id="logo">
+      <a href="."><img src="images/logo.png" width="100%"></a>
+    </div>
+    </div>
+
+  
+  <div class="wrapper">
+  
+  <div class="content">
+  <h2>New Project on GitHub</h2>
+  
+  <p>These days, I’m messin around with github and stuff :P . So i decided to upload push something onto my github account.<a href="http://maruthisharma.com/three/">Click here to see project</a></p>
+<h4 id="readme-file">Readme File</h4>
+<h2 id="mark-three-template">Mark Three - Template</h2>
+<hr>
+<p>A set of files I usually use, everytime I start a project.</p>
+<h3 id="currently-includes">Currently includes</h3>
+<ul>
+<li>Normalize v2.1.3</li>
+<li>Bourbon (SASS dependant) v3.1.8</li>
+<li>jQuery v1.10.2</li>
+</ul>
+<h3 id="css-sass-based-">CSS (SASS based)</h3>
+<ul>
+<li>Edit style.scss</li>
+<li>Link style.css</li>
+</ul>
+<h4 id="running-sass">Running SASS</h4>
+<ul>
+<li><p>Point to the <code>/css</code> folder and run the following SASS command (just once)</p>
+<pre><code>sass --watch style.scss:style.css --style compressed</code></pre>
+</li>
+<li><p>or in WindowsPowerShell, run</p>
+<pre><code>.\sass</code></pre>
+</li>
+</ul>
+<p>goto <code>// Declare Variables</code> in style.scss for default variables</p>
+<p>Optionally, run <code>myth</code> in the end</p>
+<pre><code>myth style.css style.css</code></pre>
+<h3 id="js-uglify-based-">JS (Uglify based)</h3>
+<ul>
+<li>Edit script.u.js</li>
+<li><p>Link script.js</p>
+<h4 id="running-uglify-js">Running Uglify.js</h4>
+</li>
+<li><p>From the project folder, run (after every update)</p>
+<pre><code>uglifyjs -o js/script.js js/script.u.js</code></pre>
+</li>
+<li>or in WindowsPowerShell, run<pre><code>.\ujs</code></pre>
+</li>
+</ul>
+<h3 id="default-font">Default Font</h3>
+<ul>
+<li>Open Sans</li>
+</ul>
+
+  
+  <div class="author">
+
+  </div>
+  <div style="clear:both"></div>
+  <script type="text/javascript">
+  window.onload=function(){
+    $('.author').append($.gravatar('maruthip25@gmail.com',{secure: true,size: 150}));
+    $('.author').append("Posted by Maruthi Sharma <br />on 2014/1/21 6:30 PM");
+  }
+  </script>
+  </div>
+    <div id="disqus_thread"></div>
+   <script type="text/javascript">
+       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+       var disqus_shortname = 'maruthisharmasblog'; // required: replace example with your forum shortname
+
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+ </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.gravatar.js"></script>
+  <script src="js/md5.js"></script>
+  </body>
+</html>
+

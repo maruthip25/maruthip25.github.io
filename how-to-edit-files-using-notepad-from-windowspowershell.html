@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog | How to edit files using notepad++ from WindowsPowerShell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="fonts/sans.css" />
+
+  </head>
+  <body>
+    <div class="top">
+      <div id="logo">
+      <a href="."><img src="images/logo.png" width="100%"></a>
+    </div>
+    </div>
+
+  
+  <div class="wrapper">
+  
+  <div class="content">
+  <h2>How to edit files using notepad++ from WindowsPowerShell</h2>
+  
+  <p>So, why PowerShell??.. for using git-nodejs-npm-ish stuff from it. I know Linux’s terminal is better. But, I can’t ignore windows as of now as I use Photoshop, Illustrator and other things on windows. I have nothing against GIMP :P  or Inkscape… I just got used to these….</p>
+<p>Anyway, I wanted to open a file directly in a custom editor like Notepad++ (which is awesome btw), I knew we could use something like</p>
+<pre><code>start notepad++ &lt;file-name&gt;</code></pre>
+<p>But (as you can see), its too long. So, I browsed around.I came across some “Scripts” . But I found an easier method to do what I wanted.</p>
+<p>All you have to use is an “Alias” ….</p>
+<p>So, Open PowerShell, and simply run</p>
+<pre><code>Set-Alias</code></pre>
+<p>or use its own alias</p>
+<pre><code>sal</code></pre>
+<p>Under &quot;name&quot; give the shortcut you want to use. I used “npp”.
+Now, under path, give the path to Notepad++ Program. You may have to change it according to your directory. Usually its something like</p>
+<pre><code>&quot;C:\Program Files (x86)\Notepad++\notepad++.exe&quot;</code></pre>
+<p>Now, run</p>
+<pre><code>npp &lt;file-name&gt;</code></pre>
+<p>And it opens!. Smooth isn’t it?. But you’ll probably curse me when you realise that it doesn’t work anymore after you close your WindowsPowerShell and open it the next time.</p>
+<p>In order to save your Aliases permanently, you must store it in your “profile”. Now before we continue, we need to understand some basics about “Profiles”. I’ll simply grab some stuff directly from “Microsoft TechNet’s post” (<a href="http://technet.microsoft.com/en-us/library/ee692764.aspx">http://technet.microsoft.com/en-us/library/ee692764.aspx</a>)</p>
+<p>What is a Profile?</p>
+<p>The Windows PowerShell profile is simply a script file that runs when Windows PowerShell starts up. You can put cmdlets, scripts, functions - any valid Windows PowerShell commands - into this script file. Each time you start Windows PowerShell, this script file will run. That means you can use the profile to set up your Windows PowerShell environment. Typically that would be custom console settings and aliases, but use your imagination and you can come up with other things you’d like to customize in PowerShell before you start working with it.</p>
+<p>Finding the profile:</p>
+<p>Type this at your PowerShell command prompt:</p>
+<pre><code>$profile</code></pre>
+<p>That built-in variable will return something like this for Windows XP:</p>
+<pre><code>C:\Documents and Settings\keymyer\my documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</code></pre>
+<p>And this for Windows Vista and Windows Server 2008:</p>
+<pre><code>C:\Users\kenmyer\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</code></pre>
+<p>This is the full path to the file that Windows PowerShell will try to run when it starts. Notice we said “try” to run. Here’s an interesting fact: just because you were able to find the profile doesn’t mean it actually exists. $profile is simply a built-in variable that contains the full path to where the profile will be if there is one; the file doesn’t actually have to exist, and, by default. it doesn’t. If you want a profile to run when you start Windows PowerShell, you need to create this file.</p>
+<p>Creating a profile:</p>
+<p>Before we decide to create a profile, let’s check to see whether we already have one:</p>
+<pre><code>Test-Path $profile</code></pre>
+<p>If the profile exists this command will return True; if it doesn’t exist, the command will return False. If this command returns False, you need to create the profile.</p>
+<p>Creating a profile in Windows XP is really easy. Simply type this at the command prompt:</p>
+<pre><code>notepad $profile</code></pre>
+<p>This command opens the profile in Notepad. If the profile doesn’t exist, you’ll be prompted to create it. If you choose Yes, the file will be created for you and will be opened in Notepad. Remember, though, we said this is for Windows XP. If you’re running Windows Vista or Windows Server 2008 things get a little more complicated. (But just a little bit, not very much.) If the full path to this file doesn’t exist, trying to open it in Notepad will return an error; you won’t receive any prompts and the file won’t be created for you. The way to create this file in Windows Vista and Windows Server 2008 (an approach which will also work in Windows XP) is to use the New-Item cmdlet:</p>
+<pre><code>New-Item -path $profile -type file -force</code></pre>
+<p>We pass three parameters to New-Item:</p>
+<pre><code>-path $profile We’re passing the full path, stored in the $profile variable, of the item we want to create.
+
+-type file This tells New-Item what type of item we’re creating, in this case a file.
+
+-force This parameter tells New-Item to create the full path and file no matter what.</code></pre>
+<p>Now you can open the profile.</p>
+<pre><code>notepad $profile</code></pre>
+<p>Now, Back to our post</p>
+<p>After you’re done with opening your profile, place the following line in it and save.</p>
+<pre><code>Set-Alias npp “C:\Program Files (x86)\Notepad++\notepad++.exe”</code></pre>
+<p>And like I’ve said before, You may have to change the second argument (the path to .exe file) according to your installation directory.</p>
+<p>Done. Now your alias is permanent.</p>
+<p>And of course, If you are a fan of Vim or Sublime-Text or Brackets or any other text-editor, you can always add an alias for them. Just make sure the alias isn’t assigned to something. You can run the following command to list out all the existing aliases.</p>
+<pre><code>get-alias</code></pre>
+<p>That’s pretty much it.</p>
+
+  
+  <div class="author">
+
+  </div>
+  <div style="clear:both"></div>
+  <script type="text/javascript">
+  window.onload=function(){
+    $('.author').append($.gravatar('maruthip25@gmail.com',{secure: true,size: 150}));
+    $('.author').append("Posted by Maruthi Sharma <br />on 2014/1/21 6:17 PM");
+  }
+  </script>
+  </div>
+    <div id="disqus_thread"></div>
+   <script type="text/javascript">
+       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+       var disqus_shortname = 'maruthisharmasblog'; // required: replace example with your forum shortname
+
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+ </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.gravatar.js"></script>
+  <script src="js/md5.js"></script>
+  </body>
+</html>
+

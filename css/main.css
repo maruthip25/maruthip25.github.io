@@ -13,17 +13,16 @@ body {
     padding: 20px;
     position:absolute;
     top:0;
-    left:50%;
-    margin-left: -125px;
-    height:100%;
-    width:250px;
+    left:0;
+    width:calc( 100% - 40px);
     z-index:200;
     transition: .3s all ease-in-out;
 }
 #logo{
     width: 200px;
+    left:50%;
+    margin-left: -100px;
     position:absolute;
-    left:20px;
     top:30px;
     transition: .3s all ease-in-out;
 }
@@ -60,6 +59,11 @@ body {
 }
 .content img{
   max-width:100%;
+  margin-bottom: -50px;
+}
+.post-details{
+  float:left;
+
 }
 .wrapper ul#menu{
     list-style:none;
@@ -106,10 +110,9 @@ body {
 .author{
   display:block;
   box-sizing: border-box;
-  width:100%;
   margin-bottom: 10px;
   float:right;
-  text-align:left;
+  text-align:right;
   line-height:1.5;
 
 }

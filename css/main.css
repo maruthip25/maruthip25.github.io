@@ -10,27 +10,27 @@ body {
 
 }
 .top {
-    background: #fdfdfd;
     padding: 20px;
-    height:80px;
-    position:fixed;
+    position:absolute;
     top:0;
-    left:0;
-    width:calc(100% - 40px);
+    left:50%;
+    margin-left: -125px;
+    height:100%;
+    width:250px;
     z-index:200;
-    box-shadow: 0 0 3px #ddd;
     transition: .3s all ease-in-out;
 }
 #logo{
     width: 200px;
     position:absolute;
-    left:50px;
+    left:20px;
+    top:30px;
     transition: .3s all ease-in-out;
 }
 .wrapper {
     position: absolute;
-    margin-top: 120px;
     z-index:100;
+    margin-top:120px;
     box-sizing: border-box;
     padding:20px;
     min-width: 100%;
@@ -63,7 +63,7 @@ body {
 }
 .wrapper ul#menu{
     list-style:none;
-    margin:40px auto;
+    margin:0px auto;
     padding:0;
     width:100%;
     max-width: 800px;
@@ -89,7 +89,7 @@ body {
     text-align:left;
 }
 .wrapper ul#menu li div.image{
-    float:left;
+    float:right;
     margin: -20px -40px 20px -40px;
     height:190px;
     overflow:hidden;
@@ -106,18 +106,23 @@ body {
 .author{
   display:block;
   box-sizing: border-box;
-  padding:20px;
   width:100%;
-  float:left;
+  margin-bottom: 10px;
+  float:right;
   text-align:left;
   line-height:1.5;
-  border-top: solid 1px rgba(79, 79, 79, 0.79);
+
 }
 .author img{
   width:50px;
   float:left;
-  margin:0px 10px;
+  margin-right:10px;
   border: solid #ddd 2px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
 }
 
 /* Media Queries */

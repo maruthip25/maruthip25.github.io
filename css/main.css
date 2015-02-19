@@ -76,7 +76,7 @@ body {
 .landing-text1{
   position:relative;
   color: #666;
-  font-family: 'OpenSansLight', sans-serif;
+  font-family: 'OpenSansRegular', sans-serif;
   text-align:center;
   font-size: 1.4em;
 }
@@ -86,6 +86,12 @@ body {
   font-family: 'OpenSansLight', sans-serif;
   text-align:center;
   font-size: 1em;
+}
+.landing-text2 a{
+  text-decoration:none;
+  outline:0;
+  color: #666;
+  font-family: 'OpenSansRegular', sans-serif;
 }
 #logo{
     width: 200px;

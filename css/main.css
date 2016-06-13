@@ -259,9 +259,18 @@ ul.blog-list{
   display: block;
   padding: 10px 20px;
   text-align: left;
-  border-bottom: 1px solid rgba(0,0,0,.3);
+  border-bottom: 1px solid rgba(0,0,0,.1);
 }
-.blog-list-item a{
+.blog-list li{
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.blog-list li:hover{
+  opacity: 0.9;
+}
+.blog-list-item h3{
   color: #AB385F;
 }
 .blog-content{

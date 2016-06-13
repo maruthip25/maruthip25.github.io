@@ -134,6 +134,14 @@ function hashFunction(hash){
         }
       }
     }
+    case 'toggleMenu': {
+      if(scrolledUp){
+        window.location="#closeMenu"
+      }
+      else{
+        window.location="#openMenu"
+      }
+    }
     default:{
       if(hash.indexOf('blog-')==0){
         $('.loader').show();

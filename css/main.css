@@ -181,6 +181,9 @@ a.two-segment:hover {
   background: linear-gradient(45deg,  #942068 0%,#cd5b52 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#942068', endColorstr='#cd5b52',GradientType=1 );
 }
+.blog a{
+  color: #AE6380;
+}
 .contact{
   background: #0092af;
   background: -moz-linear-gradient(45deg,  #0092af 0%, #a16cd7 100%);
@@ -246,6 +249,42 @@ a.closer{
 a.closer img{
   width: 100%;
   border: none;
+}
+ul.blog-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.blog-list-item{
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,.3);
+}
+.blog-list-item a{
+  color: #AB385F;
+}
+.blog-content{
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.blog-content p.blog-date{
+  font-family: 'gi', sans-serif;
+  text-align: right;
+  border-bottom: 1px solid rgba(0,0,0,.3);
+  margin-bottom: 10px;
+}
+.blog-content p{
+  margin:0;
+  padding: 5px;
+}
+.blog-content code{
+  background: #ddd;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: #000;
+  display: inline-block;
 }
 /* Animations */
 @-webkit-keyframes myArrow {

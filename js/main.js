@@ -78,6 +78,7 @@ function hashFunction(hash){
       break;
     }
     case 'blog': {
+      $('.loader').show();
       $('.home').css({
         top: "0px"
       });
@@ -86,9 +87,10 @@ function hashFunction(hash){
       $('#view').removeClass().addClass('blog');
       $('#view').html("...");
       $('#view').load('blog/index.html',function () {
-      $(".view-wrapper").mCustomScrollbar({
-          theme:"minimal-dark"
-      });
+        $(".view-wrapper").mCustomScrollbar({
+            theme:"minimal-dark"
+        });
+        $('.loader').hide();
       });
       break;
     }
@@ -131,6 +133,27 @@ function hashFunction(hash){
           scrolledUp = false;
         }
       }
+    }
+    default:{
+      if(hash.indexOf('blog-')==0){
+        $('.loader').show();
+        $('.home').css({
+          top: "0px"
+        });
+        scrolledUp = false;
+        $('#view').fadeIn("slow");
+        $('#view').removeClass().addClass('blog');
+        $('#view').html("...");
+        var newPath = "blog/"+hash.replace("blog-","")+".html";
+        console.log(newPath);
+        $('#view').load(newPath, function () {
+          $(".view-wrapper").mCustomScrollbar({
+              theme:"minimal-dark"
+          });
+          $('.loader').hide();
+        });
+      }
+      break;
     }
   }
 }

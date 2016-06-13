@@ -277,6 +277,7 @@ ul.blog-list{
   text-align: left;
   padding: 20px;
   margin-bottom: 20px;
+  width: 80%;
 }
 .blog-content p.blog-date{
   font-family: 'gi', sans-serif;

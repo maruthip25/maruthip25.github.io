@@ -1,0 +1,27 @@
+{
+  "name": "m4",
+  "version": "1.0.0",
+  "description": "Mark IV",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "author": "Maruthi Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "jquery": "^3.2.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-waypoint": "^7.0.3",
+    "style-loader": "^0.18.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.1"
+  }
+}

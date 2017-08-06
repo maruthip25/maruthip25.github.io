@@ -1,0 +1,48 @@
+.contacts{
+  position: absolute;
+  bottom: 5vmin;
+  right: 5vmin;
+  display: block;
+  z-index: 97;
+}
+.contacts ul{
+  list-style: none;
+}
+.contacts ul li {
+  display: inline-block;
+}
+.contacts ul li a{
+  position: relative;
+  display: block;
+  margin: 0 0.75vw;
+}
+.contacts ul li a svg{
+  width: 2vw;
+  height: 2vw;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+.contacts ul li a svg:hover{
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+}
+.contacts ul li a svg path,
+.contacts ul li a svg circle,
+.contacts ul li a svg rect{
+  fill: rgb(55, 56, 58);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+/*== Mobile css == all sizes in px ==*/
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
+  .contacts{
+    bottom: 15vmin;
+  }
+  .contacts ul li a{
+    margin: 0 15px;
+  }
+  .contacts ul li a svg{
+    width: 32px;
+    height: 32px;
+  }
+}

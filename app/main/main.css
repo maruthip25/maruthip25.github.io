@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+*::-moz-selection{
+  background: #37383A;
+  color: #f3f3f3;
+}
+*::selection{
+  background: #37383A;
+  color: #f3f3f3;
+}
+html, body{
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  /*background: #12649B;*/
+}
+a{
+  text-decoration: none;
+  outline: 0;
+}
+.slide{
+  width: 100%;
+}
+.launch-div{
+  height: 100%; /* for ff */
+  min-height: 100%;
+  display: table;
+  color: #37383A;
+  background: #F3F3F3;
+  border-collapse:collapse;
+  position: relative;
+  z-index: 91;
+}
+.launch-row{
+  display: table-row;
+}
+.launch-img{
+  width: 30%;
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 0;
+  margin:0;
+}
+
+.launch-img img{
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+.launch-text{
+  width: 70%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.launch-text h2{
+  font-weight: 400;
+  font-size: 1.1vw;  /*16px fro 1366*/
+}
+.launch-text h1{
+  font-weight: 700;
+  font-size: 2.6vw; /* 26px fro 1366 */
+  margin: .5em 0px;
+}
+.launch-text h1 .highlight{
+  background: #37383A;
+  color: #F3F3F3;
+  padding: 0.5vw 1vw;
+}
+.about-div{
+  position:relative;
+  background: #ceb640;
+  background: -webkit-linear-gradient(bottom left, #ceb640 0%, #76aeae 100%);
+  background: -o-linear-gradient(bottom left, #ceb640 0%, #76aeae 100%);
+  background: linear-gradient(to top right, #ceb640 0%, #76aeae 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ceb640', endColorstr='#76aeae',GradientType=1 );
+  overflow: hidden;
+  padding: 6vmin;
+  z-index: 92;
+  color: #F3F3F3;
+}
+.about-div h1{
+  position: absolute;
+  font-weight: 400;
+  font-size: 20vw;
+  top: -6vw;
+  left: -6vw;
+  padding: 0;
+  line-height: 20vw;
+  opacity: .6;
+}
+.about-div div.paras{
+  margin: 14vw auto 7vw;
+}
+.about-div a{
+  font-weight: 700;
+  color: #F3F3F3;
+  text-decoration: none;
+}
+.about-div a:hover{
+  text-decoration: underline;
+}
+.about-div h2{
+  width: 70%;
+  margin: auto;
+  font-size: 1.5vw;
+  text-align: left;
+  padding: 1.5vw;
+}
+.about-div p,
+.about-div ul{
+  width: 60%;
+  margin: auto;
+  font-size: 1.1vw;
+  text-align: justify;
+  padding: 1.1vw;
+}
+.about-div p .strikeIt{
+  text-decoration: line-through;
+  font-style: italic;
+}
+.works-div{
+  position: relative;
+  top:0;
+  background: #F3F3F3;
+  color: #37383A;
+  min-height: 100%;
+  z-index: 91;
+  text-align: center;
+}
+.works-div h1{
+  position: absolute;
+  font-weight: 400;
+  top: -3vw;
+  left: -2vw;
+  padding: 0;
+  color: #37383A;
+  opacity: 0.8;
+  font-size: 18vw;
+  line-height: 18vw;
+}
+.proj-blank{
+  position: relative;
+  display: block;
+  height: 14vw;
+}
+.thanks-div{
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  color: #F3F3F3;
+  background: #45c2ca;
+  background: -moz-linear-gradient(45deg, #45c2ca 0%, #3997da 100%);
+  background: -webkit-linear-gradient(45deg, #45c2ca 0%,#3997da 100%);
+  background: linear-gradient(45deg, #45c2ca 0%,#3997da 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45c2ca', endColorstr='#3997da',GradientType=1 );
+}
+.thanks-row{
+  display: table-row;
+}
+.thanks-text{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+a.thanks-button{
+  display: inline-block;
+  font-size: 2vw;
+  color: #F3F3F3;
+  border: solid 0.3vw #F3F3F3;
+  padding: 1vw 2vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  border-radius: 1vw;
+}
+a.thanks-button:hover{
+  background: #F3F3F3;
+  color: #45c2ca;
+}
+.thanks-follow{
+  display: block;
+  font-size: 1.2vw;
+  padding-top: 2vw;
+}
+.thanks-follow a{
+  display: block;
+  font-weight: 700;
+  color: #f3f3f3;
+  margin-bottom: .5vw;
+}
+.thanks-text .contacts{
+  position: relative;
+  bottom:0;
+  right:0;
+  padding-top: 1vw;
+}
+.thanks-text .contacts ul li a svg path,
+.thanks-text .contacts ul li a svg circle,
+.thanks-text .contacts ul li a svg rect{
+  fill: rgb(243, 243, 243);
+}
+
+/*
+.works-div h1{
+  position: relative;
+  font-weight: 400;
+  font-size: 2.6vw;
+  color: #AE3445;
+  padding: 5.2vw 1.5vw 1vw;
+  display: inline-block;
+  top: 0;
+  left:0;
+  text-align: left;
+  border-bottom: solid 0.1vw #AE3445;
+}*/
+
+/*== Mobile css == all sizes in px ==*/
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
+  .launch-div{
+    background: #F3F3F3 url('bg1-mobile.jpg') no-repeat;
+    background-size: cover;
+  }
+  .launch-img{
+    display: none;
+  }
+  .launch-text{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    z-index: 94;
+    text-align: center;
+  }
+  .launch-text h1{
+    font-size: 2em;
+  }
+  .launch-text h2{
+    font-size: 1.2em;
+  }
+  a.thanks-button{
+    font-size: 2em;
+    border: solid 3px #F3F3F3;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  .thanks-follow{
+    font-size: 1.2em;
+    padding-top: 20px;
+  }
+  .thanks-follow a{
+    margin-bottom: 5px;
+  }
+  .thanks-text .contacts{
+    padding-top: 10px;
+  }
+  .about-div h1{
+    font-size: 13.5vw;
+    top: -4vw;
+    left: -4vw;
+    line-height: 13.5vw;
+  }
+  .about-div div.paras{
+    margin: 10vw auto 5vw;
+  }
+  .about-div h2{
+    font-size: 1.5em;
+    width: 100%;
+    padding: 10px;
+  }
+  .about-div p,
+  .about-div ul{
+    font-size: 1em;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+  .works-div h1{
+    font-size: 13.5vw;
+    top: -2vw;
+    left: -2vw;
+    line-height: 13.5vw;
+  }
+  /*.works-div h1{
+    font-size: 1.5em;
+    padding: 1em;
+    border-bottom: solid 1px #AE3445;
+  }*/
+}
+@media screen and (max-width: 480px), screen and (max-device-width: 480px) {
+  .launch-text{
+    vertical-align: top;
+    padding-top: 30vh;
+  }
+  .launch-text h1{
+    font-size: 1.6em;
+  }
+  .launch-text h2{
+    font-size: 1em;
+  }
+  .about-div h1{
+    font-size: 12vw;
+    top: -3vw;
+    left: -2vw;
+    line-height: 12vw;
+  }
+  .works-div h1{
+    font-size: 14.5vw;
+    line-height: 14.5vw;
+  }
+  .proj-blank{
+    height: 1vw;
+  }
+  .about-div p,
+  .about-div ul{
+    font-size: .9em;
+  }
+}

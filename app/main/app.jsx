@@ -306,8 +306,8 @@ class Main extends React.Component {
     const navItems = [
       {id: 0, text: "go home", url: "#home"},
       {id: 1, text: "about me", url: "#about"},
-      {id: 2, text: "my works", url: "#works"},
-      {id: 3, text: "contact", url: "#thanks"}
+      {id: 2, text: "portfolio", url: "#works"},
+      {id: 3, text: "contact", url: "#contact"}
     ];
     const contItems = [
       {
@@ -367,7 +367,7 @@ class Main extends React.Component {
             <h2> The Who </h2>
             <p>They call me the <a title="Linkin Park Forever" href="https://www.youtube.com/watch?v=Wbt59pmT26E" target="blank">RobotBoy</a>, or I <span className="strikeIt">make</span> implore them.</p>
             <p>I’m a UI designer who knows how to code - so I can plan, design and develop smooth and responsive websites for you. I’m also a graphic designer, so I can also design logos, posters or any other branding material.</p>
-            <p>I’ve been freelancing for more than 5 years (with my awesome friends at <a title="Citrus Designs FTW" href="http://citrusdesigns.in" target="blank">Citrus Designs</a>), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.</p>
+            <p>I’ve been freelancing for more than 5 years (with my awesome friends at <a title="Citrus Designs FTW" href="http://citrusdesigns.in" target="blank">Citrus Designs</a>), helping out budding start-ups in building a brand and already successful brands in revamping their identity.</p>
             <h2>The How</h2>
             <ul>
               <li>Adobe Illustrator and Photoshop for graphic designing</li>
@@ -407,7 +407,7 @@ class Main extends React.Component {
     const ThanksDiv = (
       <div style={{height: '100%'}}>
       <Waypoint onLeave={this.thanksTop} bottomOffset="95%"></Waypoint>
-        <div id="thanks" className="thanks-div slide">
+        <div id="contact" className="thanks-div slide">
           <div className="thanks-row">
             <div className="thanks-text">
               <a href="mailto:maruthi@citrusdesigns.in" className="thanks-button">Get in Touch</a>

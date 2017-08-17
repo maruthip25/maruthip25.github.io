@@ -85,41 +85,10 @@ const projectsArray = [
   },
   {
     id: 1,
-    title: "Manish Maryada",
-    href: "http://manishmaryada.com",
-    type: "UI/UX Design | Responsive Web Design",
-    desc: "My friend wanted a résumé-style website to show off his professional skills. He also wanted a magazine-style cover page to show off his new suit.",
-    glyphClasses: [
-      {
-        id:0,
-        className: 'devicon-html5-plain',
-        name: 'HTML 5'
-      },
-      {
-        id:1,
-        className: 'devicon-css3-plain',
-        name: 'CSS 3'
-      },
-      {
-        id:2,
-        className: 'devicon-javascript-plain',
-        name: 'Javascript'
-      },
-      {
-        id:3,
-        className: 'devicon-bootstrap-plain',
-        name: 'Bootstrap'
-      }
-    ],
-    accent: {background: '#D87E67'},
-    mockup: 'build/images/manish_mockup.png'
-  },
-  {
-    id: 2,
     title: "Citrus Designs",
     href: "http://citrusdesigns.in",
     type: "Logo Design | UI/UX Design | Responsive Web Design | Branding",
-    desc: "Citrus Designs is a team of freelancers, that I formed with a couple of my friends from college. The minimalistic and sharp design of the website not only spoke of our style in design, but also attracted a lot of work from clients who had a similar taste.",
+    desc: "Citrus Designs is a team of freelancers, that I formed with a couple of my friends from college. The minimalistic and sharp design of the website not only spoke of our style in design, but also attracted a lot of work from clients who liked the way it looked.",
     glyphClasses: [
       {
         id:0,
@@ -151,11 +120,42 @@ const projectsArray = [
     mockup: 'build/images/citrus_mockup.png'
   },
   {
+    id: 2,
+    title: "Manish Maryada",
+    href: "http://manishmaryada.com",
+    type: "UI/UX Design | Responsive Web Design",
+    desc: "My friend wanted a résumé-style website to show off his professional skills. He also wanted a magazine-style cover page to show off his new suit.",
+    glyphClasses: [
+      {
+        id:0,
+        className: 'devicon-html5-plain',
+        name: 'HTML 5'
+      },
+      {
+        id:1,
+        className: 'devicon-css3-plain',
+        name: 'CSS 3'
+      },
+      {
+        id:2,
+        className: 'devicon-javascript-plain',
+        name: 'Javascript'
+      },
+      {
+        id:3,
+        className: 'devicon-bootstrap-plain',
+        name: 'Bootstrap'
+      }
+    ],
+    accent: {background: '#D87E67'},
+    mockup: 'build/images/manish_mockup.png'
+  },
+  {
     id: 3,
     title: "Sri Kusumahara Enterprises",
     href: "http://kitchenz.co.in",
     type: "Logo Design | UI/UX Design | Web Design | Branding",
-    desc: "Sri Kusumahara Enterprises are premium authorized dealers of modular kitchen and hardware in Hyderabad. They are one of the earliest clients that I have worked with, completely re-branding their identity from Logo, Stationary to Website Design.",
+    desc: "Sri Kusumahara Enterprises are premium authorized dealers of modular kitchen and hardware in Hyderabad. They are one of the earliest clients that I have worked with, completely re-branding their identity - including everything from Logo, Stationary to Website Design.",
     glyphClasses: [
       {
         id:0,
@@ -365,8 +365,8 @@ class Main extends React.Component {
           <h1>About Me</h1>
           <div className="paras">
             <h2> The Who </h2>
-            <p>They call me the <a title="Linkin Park Forever" href="https://www.youtube.com/watch?v=Wbt59pmT26E" target="blank">RobotBoy</a>, or I <span className="strikeIt">make</span> implore them.</p>
-            <p>I’m a UI designer who knows how to code - so I can plan, design and develop smooth and responsive websites for you. I’m also a graphic designer, so I can also design logos, posters or any other branding material.</p>
+            <p>They call me the <a title="Linkin Park Forever" href="https://www.youtube.com/watch?v=Wbt59pmT26E" target="blank">RobotBoy</a>, or I <span className="strikeIt">make</span> implore them to.</p>
+            <p>I’m a UI designer who knows how to code - so I can plan, design and develop smooth and responsive websites for you. I’m also a graphic designer, so I can design logos, posters or any other branding material too.</p>
             <p>I’ve been freelancing for more than 5 years (with my awesome friends at <a title="Citrus Designs FTW" href="http://citrusdesigns.in" target="blank">Citrus Designs</a>), helping out budding start-ups in building a brand and already successful brands in revamping their identity.</p>
             <h2>The How</h2>
             <ul>
@@ -378,7 +378,7 @@ class Main extends React.Component {
             <h2>The Why</h2>
             <p>Because I’m obsessed with Colors, Typography and the Web</p>
             <h2>The 'Line in the Sand'</h2>
-            <p>Although I’m not a formalist, I do have few rules that I wouldn't like to break</p>
+            <p>Although I’m not a formalist, I do have a few rules that I wouldn't like to break</p>
             <ul>
               <li>I will not make you a hamburger list icon with just two lines – <i>because a list needs 3 items at least and a hamburger needs three layers</i></li>
               <li>I will not use flash – <i>because it’s dead</i></li>

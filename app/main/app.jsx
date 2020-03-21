@@ -412,7 +412,7 @@ class Main extends React.Component {
             <div className="thanks-text">
               <a href="mailto:maruthi@citrusdesigns.in" className="thanks-button">Get in Touch</a>
               <span className="thanks-follow">
-                <a href="mailto:maruthi@citrusdesigns.in">maruthi@citrusdesigns.in</a>
+                <a href="mailto:maruthisharma@live.in">maruthisharma@live.in</a>
                 <a href="tel:+919908198201">+91 99081 98201</a>
               </span>
               <Contact items={contItems}/>
